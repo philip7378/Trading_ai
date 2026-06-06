@@ -230,7 +230,7 @@ def detect_signals(df, pending):
             out.append({
                 'strategy_id': 'confirmation_A',
                 'direction': p['direction'],
-                'multiplier': 50,
+                'multiplier': int(os.environ.get('BOT_MULTIPLIER', 100)),
                 'tp_money': 1.0,
                 'sl_money': 1.0,
                 'entry_idx': i,
@@ -245,7 +245,7 @@ def detect_signals(df, pending):
         out.append({
             'strategy_id': 'snapback_B',
             'direction': direction,
-            'multiplier': 50,
+            'multiplier': int(os.environ.get('BOT_MULTIPLIER', 100)),
             'tp_money': 1.5,
             'sl_money': 1.0,
             'entry_idx': i,
