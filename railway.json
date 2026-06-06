@@ -1,0 +1,11 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "DOCKERFILE"
+  },
+  "deploy": {
+    "restartPolicyType": "ALWAYS",
+    "restartPolicyMaxRetries": 10,
+    "startCommand": "python r100_live_deriv_demo_bot.py --mode high_confidence --stake 1 --max-trades 3 --warmup-candles 120 --execute-demo"
+  }
+}

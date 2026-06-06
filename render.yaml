@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: r100-deriv-demo-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python r100_live_deriv_demo_bot.py --mode high_confidence --stake 1 --max-trades 3 --warmup-candles 120 --execute-demo
+    envVars:
+      - key: DERIV_DEMO_TOKEN
+        sync: false
+      - key: LOKY_MAX_CPU_COUNT
+        value: "2"
