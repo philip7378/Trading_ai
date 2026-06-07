@@ -59,7 +59,7 @@ class DerivWS:
         self.pending = {}
 
     async def connect(self):
-        self.ws = await websockets.connect(WS_URL, ping_interval=20, ping_timeout=20)
+        self.ws = await websockets.connect(WS_URL, ping_interval=60, ping_timeout=120)
         auth = await self.call({"authorize": self.token})
         return auth
 
