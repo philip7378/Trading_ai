@@ -6,6 +6,6 @@
   "deploy": {
     "restartPolicyType": "ALWAYS",
     "restartPolicyMaxRetries": 10,
-    "startCommand": "python r100_live_deriv_demo_bot.py --max-trades False  --execute-demo"
+    "startCommand": "python r100_live_deriv_demo_bot.py --max-trades 10  --execute-demo"
   }
 }
